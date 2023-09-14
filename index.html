@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SolarSystem</title>
+    <style>
+        body{
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: black;
+            overflow: hidden;
+        }
+
+        .container{
+            font-size: 10px;
+            width: 40em;
+            height: 40em;
+            position: relative;
+        }
+
+        .sun{
+            position: absolute;
+            top: 15em;
+            left: 15em;
+            width: 10em;
+            height: 10em;
+            background-color: yellow;
+            border-radius: 50%;
+            box-shadow: 0 0 3em white;
+        }
+
+        
+
+    
+        /* OUTLINE FOR THE PLANETS */
+        .earth,
+        .moon,
+        .mercury,
+        .venus,
+        .mars,
+        .moon_mars1,
+        .moon_mars2{
+            position: absolute;
+            border-style: solid;
+            border-color: white transparent transparent transparent;
+            border-width: 0.1em 0.1em 0 0;
+            border-radius: 50%;
+        }
+
+        /* PLANET'S ORBIT--------- */
+        .mercury{
+            /* position: absolute;
+            border-style: solid;
+            border-color: white transparent transparent transparent;
+            border-width: 0.1em 0.1em 0 0;
+            border-radius: 50%; */
+
+            top: 13em;
+            left: 13em;
+            width: 15em;
+            height: 15em;
+            animation: orbit 10s linear infinite;
+        }
+
+        .venus{
+            /* position: absolute;
+            border-style: solid;
+            border-color: white transparent transparent transparent;
+            border-width: 0.1em 0.1em 0 0;
+            border-radius: 50%; */
+
+            top: 12em;
+            left: 10em;
+            width: 21em;
+            height: 21em;
+            animation: orbit 30s linear infinite;
+        }
+
+        .earth{
+            top: 5em;
+            left: 5em;
+            width: 30em;
+            height: 30em;
+            animation: orbit 36.5s linear infinite;
+        }        
+
+        .moon{
+            top: 0;
+            right: 0;
+            width: 8em;
+            height: 8em;
+            animation: orbit 2.7s linear infinite;
+        }
+
+        .mars{
+            top: 7em;
+            left: 7em;
+            width: 30em;
+            height: 30em;
+            animation: orbit 60s linear infinite;
+        }
+
+        .moon_mars1{
+            top: 0;
+            right: 0;
+            left: 1;
+            width: 6em;
+            height: 6em;
+            animation: orbit 5s linear infinite;
+        }
+
+        .moon_mars2{
+            top: 0;
+            right: 0;
+            width: 8em;
+            height: 8em;
+            animation: orbit 3s linear infinite;
+        }
+        
+
+        /* THE ACTUAL PLANETS----------- */
+        .earth::before,
+        .moon::before,
+        .mercury::before,
+        .venus::before,
+        .mars::before,
+        .moon_mars1::before,
+        .moon_mars2::before
+        {
+            content: "";
+            position: absolute;
+            border-radius: 50%;
+        }
+
+        .mercury::before{
+            top: 1.2em;
+            /* right: 1em; */
+            left: 12em;
+            width: 1.5em;
+            height: 1.5em;
+            background-color: rgb(201, 173, 96);
+        }
+
+        .venus::before{
+            top: 2em;        
+            left: 16.8em;
+            width: 2.5em;
+            height: 2.5em;
+            background-color: rgb(156, 125, 39);
+        }
+
+        .earth::before{
+            top: 2.8em;
+            right: 2.8em;
+            width: 3em;
+            height: 3em;
+            background-color: rgb(145, 153, 226);
+        }
+
+        .moon::before{
+            top: 0.8em;
+            right: 0.2em;
+            width: 1.2em;
+            height: 1.2em;
+            background-color: silver;
+        }
+
+        .mars::before{
+            top: 4em;
+            right: 3em;
+            width: 1.7em;
+            height: 1.7em;
+            background-color: rgb(190, 113, 23);
+        }
+
+        .moon_mars1::before{
+            top: 0.2em;
+            right: 0.5em;
+            width: 0.8em;
+            height: 0.8em;
+            background-color: rgb(53, 179, 238);
+        }
+        
+        .moon_mars2::before{
+            top: 0.5em;
+            right: 0.8em;
+            width: 1em;
+            height: 1em;
+            background-color: rgb(11, 114, 100);
+        }
+       
+
+        @keyframes orbit {
+            to{
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="sun"></div>
+        <div class="mercury"></div>
+        <div class="venus"></div>
+        <div class="earth">
+            <div class="moon"></div>
+        </div>
+        <div class="mars">
+            <div class="moon_mars1"></div>
+            <div class="moon_mars2"></div>
+        </div>
+
+    </div>
+</body>
+</html>
